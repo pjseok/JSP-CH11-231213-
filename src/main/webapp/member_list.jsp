@@ -38,14 +38,16 @@
 			rs = stmt.executeQuery(sql); //select문 실행-> executQuery로 SQL문 실행
 			// DB에서 보내주는 select문의 실행결과를 ResultSet 클래스로 만든 rs로 받음
 			
+			int count = 1;
+			
 			while(rs.next()) {
 				String db_id = rs.getString("id"); // 레코드의 id필드 내의 값 가져오기
 				String db_pw = rs.getString("passwd"); // 레코드의 password필드 내의 값 가져오기
 				String db_email = rs.getString("email"); // 레코드의 email필드 내의 값 가져오기
 				String db_signuptime = rs.getString("signuptime");
 			
-				out.println(db_id+ "/" + "/" +db_email+ "/"+ db_signuptime +"<br>");
-				
+				out.println(count + ")" + db_id + "/" + "/" +db_email+ "/"+ db_signuptime +"<br>");
+				count++; // 반복될때마다 1씩 증가
 				
 			}
 			
